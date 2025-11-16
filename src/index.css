@@ -8,18 +8,24 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 20% 97%;
-    --foreground: 220 15% 20%;
+    /* --- NOUVELLE PALETTE CLAIRE BASÉE SUR VOS COULEURS --- */
 
+    /* Couleurs de base de l'Application */
+    --background: 220 20% 97%; /* Fond principal très clair */
+    --foreground: 210 3% 32%; /* #4f5253 - Texte principal Gris Sombre */
+
+    /* Cartes et Popovers (Reste Blanc) */
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
+    --card-foreground: 210 3% 32%; /* #4f5253 */
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
+    --popover-foreground: 210 3% 32%; /* #4f5253 */
 
-    --primary: 220 70% 60%;
-    --primary-foreground: 0 0% 100%;
+    /* Couleur Principale d'Action */
+    --primary: 140 100% 28%; /* #008d36 - Vert Sombre */
+    --primary-foreground: 0 0% 100%; /* Texte sur le primaire : Blanc */
 
+    /* Secondaire (Gardé pour contraste, mais vous pouvez le changer) */
     --secondary: 260 60% 70%;
     --secondary-foreground: 0 0% 100%;
 
@@ -41,40 +47,40 @@ All colors MUST be HSL.
 
     --border: 220 15% 88%;
     --input: 220 15% 92%;
-    --ring: 220 70% 60%;
+    --ring: 140 100% 28%; /* Anneau basé sur la nouvelle couleur primaire */
 
     --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
+    /* Couleurs du Sidebar */
+    --sidebar-background: 0 0% 0%; /* #000000 - Noir Pur */
+    --sidebar-foreground: 0 0% 98%; /* Texte sidebar : Presque Blanc */
+    --sidebar-primary: 140 100% 28%; /* Vert Actif */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%; /* Gris foncé pour le survol */
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 220 20% 10%;
-    --foreground: 220 15% 92%;
+    /* --- NOUVELLE PALETTE SOMBRE AJUSTÉE --- */
 
+    /* Couleurs de base de l'Application */
+    --background: 220 20% 10%; /* Fond principal très sombre */
+    --foreground: 210 3% 70%; /* Texte principal Clair (pour contraste) */
+
+    /* Cartes et Popovers */
     --card: 220 18% 14%;
-    --card-foreground: 220 15% 92%;
+    --card-foreground: 210 3% 70%;
 
     --popover: 220 18% 14%;
-    --popover-foreground: 220 15% 92%;
+    --popover-foreground: 210 3% 70%;
 
-    --primary: 220 70% 55%;
+    /* Couleur Principale d'Action (légèrement plus lumineuse pour la visibilité) */
+    --primary: 140 100% 40%; /* Vert un peu plus clair que 28% */
     --primary-foreground: 0 0% 100%;
 
+    /* Secondaire */
     --secondary: 260 60% 60%;
     --secondary-foreground: 0 0% 100%;
 
@@ -96,10 +102,12 @@ All colors MUST be HSL.
 
     --border: 220 15% 22%;
     --input: 220 15% 18%;
-    --ring: 220 70% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --ring: 140 100% 40%; /* Anneau basé sur la nouvelle couleur primaire */
+
+    /* Couleurs du Sidebar */
+    --sidebar-background: 0 0% 0%; /* #000000 - Noir Pur */
+    --sidebar-foreground: 210 3% 70%; /* Texte sidebar : Clair */
+    --sidebar-primary: 140 100% 40%; /* Vert Actif */
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
@@ -117,7 +125,12 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-poppins;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-semibold;
   }
 }
@@ -135,11 +148,20 @@ All colors MUST be HSL.
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* Les gradients utilisent maintenant votre nouvelle couleur primaire (Vert) */
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--secondary)) 100%
+    );
   }
 
   .gradient-success {
-    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--success)) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--accent)) 0%,
+      hsl(var(--success)) 100%
+    );
   }
 }

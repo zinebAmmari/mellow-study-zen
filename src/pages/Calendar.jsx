@@ -50,7 +50,7 @@ const Calendar = () => {
                   <div key={task.id} className="p-4 bg-muted/30 rounded-lg">
                     {/* Affichage de l'heure de la tâche */}
                     {task.dueDate && (
-                      <p className="text-sm font-semibold text-blue-600 mb-1">
+                      <p className="text-sm font-semibold text-[#008d36] mb-1">
                         {format(new Date(task.dueDate), "HH:mm")}
                       </p>
                     )}
